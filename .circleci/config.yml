@@ -1,0 +1,19 @@
+version: 2.1
+
+orbs:
+  heroku: circleci/heroku@1.1.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.7
+    steps:
+      - run: 'ruby -e "require \"io/console\"; STDIN.raw!; puts STDIN.read_nonblock(1000).inspect" || exit 0'
+      - run: 'ruby -e "require \"io/console\"; STDIN.raw!; puts STDIN.read_nonblock(1000).inspect" || exit 0'
+      - run: 'ruby -e "require \"io/console\"; STDIN.raw!; puts STDIN.read_nonblock(1000).inspect" || exit 0'
+
+workflows:
+  version: 2.1
+  default-ci-workflow:
+    jobs:
+      - build
